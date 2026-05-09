@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Geeths Makeover – Professional Makeup Artist by Shashikala. Bridal, Wedding, Engagement, Party & Festival Makeup. Home Service available in Bangalore." />
+  <meta name="keywords" content="makeup artist bangalore, bridal makeup, home service makeup, geeths makeover, shashikala makeup" />
+  <meta name="author" content="Geeths Makeover" />
+  <title>Geeths Makeover | Professional Makeup Artist – Beauty at Your Doorstep</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── CSS Variables ─── */
+    :root {
+      --cream:    #faf7f2;
+      --blush:    #f0d9d0;
+      --rose:     #c9a89a;
+      --gold:     #c8a96e;
+      --gold-lt:  #e8d5a3;
+      --mocha:    #7a5c52;
+      --dark:     #3b2a27;
+      --white:    #ffffff;
+      --text:     #5a4540;
+      --text-lt:  #9b7e78;
+
+      --ff-serif:  'Cormorant Garamond', Georgia, serif;
+      --ff-script: 'Great Vibes', cursive;
+      --ff-sans:   'Jost', sans-serif;
+
+      --r-sm: 8px;
+      --r-md: 16px;
+      --r-lg: 32px;
+      --shadow: 0 8px 40px rgba(58, 42, 39, 0.10);
+      --shadow-lg: 0 20px 60px rgba(58, 42, 39, 0.18);
+      --transition: 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    /* ─── Reset & Base ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--ff-sans);
+      background: var(--cream);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ─── Utility ─── */
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+    .section-label {
+      font-family: var(--ff-sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .section-title {
+      font-family: var(--ff-serif);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 400;
+      color: var(--dark);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .section-subtitle {
+      font-size: 1rem;
+      color: var(--text-lt);
+      max-width: 560px;
+      line-height: 1.8;
+    }
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 24px 0;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-lt), transparent);
+    }
+    .divider-icon { color: var(--gold); font-size: 1.1rem; }
+
+    /* ─── Scroll Animation ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal-delay-5 { transition-delay: 0.5s; }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 18px 0;
+      transition: background var(--transition), box-shadow var(--transition), padding var(--transition);
+    }
+    nav.scrolled {
+      background: rgba(250, 247, 242, 0.96);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 2px 24px rgba(58, 42, 39, 0.08);
+      padding: 12px 0;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+    .nav-logo-script {
+      font-family: var(--ff-script);
+      font-size: 1.8rem;
+      color: var(--dark);
+      line-height: 1;
+    }
+    .nav-logo-tag {
+      font-family: var(--ff-sans);
+      font-size: 0.58rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text);
+      position: relative;
+      transition: color var(--transition);
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 1px;
+      background: var(--gold);
+      transition: width var(--transition);
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta {
+      background: var(--dark);
+      color: var(--cream) !important;
+      padding: 9px 20px;
+      border-radius: 40px;
+      font-size: 0.75rem !important;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: background var(--transition), transform var(--transition) !important;
+    }
+    .nav-cta::after { display: none !important; }
+    .nav-cta:hover { background: var(--gold) !important; color: var(--dark) !important; transform: translateY(-2px); }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none; border: none;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px; height: 1.5px;
+      background: var(--dark);
+      transition: var(--transition);
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: var(--cream);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: var(--ff-serif);
+      font-size: 2rem;
+      color: var(--dark);
+      transition: color var(--transition);
+    }
+    .mobile-menu a:hover { color: var(--gold); }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100svh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--cream);
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 40%, rgba(240,217,208,0.55) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 80% at 20% 80%, rgba(200,169,110,0.12) 0%, transparent 60%);
+    }
+    /* Decorative petals */
+    .hero-petal {
+      position: absolute;
+      border-radius: 50% 0;
+      opacity: 0.18;
+      animation: floatPetal 8s ease-in-out infinite;
+    }
+    .hero-petal:nth-child(1) { width: 220px; height: 220px; background: var(--rose); top: 8%; right: 5%; animation-delay: 0s; }
+    .hero-petal:nth-child(2) { width: 120px; height: 120px; background: var(--gold); top: 60%; right: 15%; animation-delay: 2s; }
+    .hero-petal:nth-child(3) { width: 80px; height: 80px; background: var(--blush); bottom: 20%; left: 4%; animation-delay: 4s; }
+    @keyframes floatPetal {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-18px) rotate(8deg); }
+    }
+
+    /* Corner ornaments */
+    .corner-ornament {
+      position: absolute;
+      width: 140px; height: 140px;
+      pointer-events: none;
+      opacity: 0.25;
+    }
+    .corner-ornament.tl { top: 60px; left: 24px; transform: rotate(0deg); }
+    .corner-ornament.br { bottom: 40px; right: 24px; transform: rotate(180deg); }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      padding-top: 100px;
+    }
+    .hero-eyebrow {
+      font-family: var(--ff-sans);
+      font-size: 0.68rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 32px; height: 1px;
+      background: var(--gold);
+    }
+    .hero-name {
+      font-family: var(--ff-script);
+      font-size: clamp(4rem, 12vw, 7.5rem);
+      color: var(--dark);
+      line-height: 1;
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
+    }
+    .hero-title {
+      font-family: var(--ff-serif);
+      font-size: clamp(1.1rem, 3vw, 1.6rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--mocha);
+      margin-bottom: 32px;
+    }
+    .hero-desc {
+      font-size: 1rem;
+      color: var(--text-lt);
+      max-width: 480px;
+      margin-bottom: 44px;
+      line-height: 1.9;
+    }
+    .hero-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 30px;
+      border-radius: 50px;
+      font-family: var(--ff-sans);
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: all var(--transition);
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--dark);
+      color: var(--cream);
+      box-shadow: 0 6px 24px rgba(58,42,39,0.22);
+    }
+    .btn-primary:hover {
+      background: var(--gold);
+      color: var(--dark);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(200,169,110,0.35);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--dark);
+      border: 1.5px solid var(--rose);
+    }
+    .btn-outline:hover {
+      background: var(--blush);
+      transform: translateY(-3px);
+      border-color: var(--mocha);
+    }
+    .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+    .hero-badge {
+      position: absolute;
+      right: 40px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 140px; height: 140px;
+      z-index: 2;
+      animation: spinBadge 20s linear infinite;
+    }
+    .hero-badge svg { width: 100%; height: 100%; }
+    @keyframes spinBadge {
+      from { transform: translateY(-50%) rotate(0deg); }
+      to   { transform: translateY(-50%) rotate(360deg); }
+    }
+
+    /* ─── MARQUEE ─── */
+    .marquee-wrap {
+      background: var(--dark);
+      padding: 14px 0;
+      overflow: hidden;
+    }
+    .marquee-track {
+      display: flex;
+      white-space: nowrap;
+      animation: marqueeScroll 22s linear infinite;
+    }
+    .marquee-item {
+      font-family: var(--ff-serif);
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--gold-lt);
+      padding: 0 40px;
+      letter-spacing: 0.05em;
+    }
+    .marquee-dot {
+      color: var(--gold);
+      margin: 0 -20px;
+    }
+    @keyframes marqueeScroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ─── ABOUT ─── */
+    #about { padding: 100px 0; }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .about-image-wrap {
+      position: relative;
+    }
+    .about-image-frame {
+      position: relative;
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      background: linear-gradient(135deg, var(--blush) 0%, var(--cream) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-lg);
+    }
+    .about-image-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      color: var(--rose);
+      opacity: 0.7;
+    }
+    .about-image-placeholder svg { width: 64px; height: 64px; }
+    .about-image-placeholder span {
+      font-family: var(--ff-serif);
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--mocha);
+    }
+    .about-accent-box {
+      position: absolute;
+      top: -20px; right: -20px;
+      width: 100px; height: 100px;
+      border: 2px solid var(--gold-lt);
+      border-radius: var(--r-md);
+      z-index: -1;
+    }
+    .about-stat-chips {
+      position: absolute;
+      bottom: -24px; left: 24px;
+      display: flex;
+      gap: 12px;
+    }
+    .stat-chip {
+      background: var(--white);
+      border-radius: 50px;
+      padding: 10px 20px;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .stat-chip-num {
+      font-family: var(--ff-serif);
+      font-size: 1.5rem;
+      color: var(--dark);
+      font-weight: 500;
+    }
+    .stat-chip-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      color: var(--text-lt);
+      text-transform: uppercase;
+    }
+
+    .about-text { padding-bottom: 24px; }
+    .about-values {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .about-value {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .about-value-icon {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--blush);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--mocha);
+    }
+    .about-value-icon svg { width: 18px; height: 18px; }
+    .about-value-text h4 {
+      font-family: var(--ff-serif);
+      font-size: 1.05rem;
+      color: var(--dark);
+      margin-bottom: 2px;
+    }
+    .about-value-text p { font-size: 0.88rem; color: var(--text-lt); }
+
+    /* ─── SERVICES ─── */
+    #services {
+      padding: 100px 0;
+      background: linear-gradient(180deg, var(--cream) 0%, #f5ede8 100%);
+    }
+    .services-header { text-align: center; margin-bottom: 60px; }
+    .services-header .section-subtitle { margin: 0 auto; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .service-card {
+      background: var(--white);
+      border-radius: var(--r-lg);
+      padding: 40px 32px;
+      position: relative;
+      overflow: hidden;
+      transition: transform var(--transition), box-shadow var(--transition);
+      cursor: default;
+      group: true;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--blush) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+    .service-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+    .service-card:hover::before { opacity: 1; }
+    .service-card-num {
+      font-family: var(--ff-serif);
+      font-size: 4rem;
+      font-weight: 300;
+      color: var(--blush);
+      line-height: 1;
+      position: absolute;
+      top: 20px; right: 24px;
+      transition: color var(--transition);
+    }
+    .service-card:hover .service-card-num { color: rgba(200,168,154,0.3); }
+    .service-icon {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blush), var(--gold-lt));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .service-icon svg { width: 26px; height: 26px; color: var(--mocha); }
+    .service-name {
+      font-family: var(--ff-serif);
+      font-size: 1.4rem;
+      color: var(--dark);
+      margin-bottom: 10px;
+      position: relative; z-index: 1;
+    }
+    .service-desc {
+      font-size: 0.88rem;
+      color: var(--text-lt);
+      line-height: 1.8;
+      position: relative; z-index: 1;
+    }
+    .service-tag {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold-lt);
+      padding: 4px 12px;
+      border-radius: 20px;
+      position: relative; z-index: 1;
+    }
+
+    /* ─── BOOKING ─── */
+    #booking {
+      padding: 100px 0;
+      background: var(--dark);
+      position: relative;
+      overflow: hidden;
+    }
+    .booking-bg-ornament {
+      position: absolute;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(200,169,110,0.12) 0%, transparent 70%);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    .booking-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .booking-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: block;
+    }
+    .booking-title {
+      font-family: var(--ff-serif);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 300;
+      color: var(--cream);
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    .booking-title em {
+      font-style: italic;
+      color: var(--gold-lt);
+    }
+    .booking-sub {
+      font-size: 0.95rem;
+      color: rgba(250,247,242,0.6);
+      margin-bottom: 44px;
+      line-height: 1.8;
+    }
+    .booking-btns {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .btn-wa {
+      background: #25D366;
+      color: #fff;
+      box-shadow: 0 6px 24px rgba(37,211,102,0.3);
+    }
+    .btn-wa:hover {
+      background: #20c05c;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(37,211,102,0.4);
+    }
+    .btn-ig {
+      background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      color: #fff;
+      box-shadow: 0 6px 24px rgba(220,39,67,0.3);
+    }
+    .btn-ig:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(220,39,67,0.4);
+    }
+
+    /* ─── CONTACT ─── */
+    #contact { padding: 100px 0; }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .contact-info { }
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .contact-icon {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: var(--blush);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--mocha);
+    }
+    .contact-icon svg { width: 20px; height: 20px; }
+    .contact-item-text h4 {
+      font-family: var(--ff-serif);
+      font-size: 1.05rem;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+    .contact-item-text a, .contact-item-text p {
+      font-size: 0.9rem;
+      color: var(--text-lt);
+      transition: color var(--transition);
+    }
+    .contact-item-text a:hover { color: var(--gold); }
+
+    .contact-cta-box {
+      background: linear-gradient(135deg, var(--dark) 0%, #4a352f 100%);
+      border-radius: var(--r-lg);
+      padding: 48px 40px;
+      text-align: center;
+    }
+    .contact-cta-box h3 {
+      font-family: var(--ff-serif);
+      font-size: 1.8rem;
+      color: var(--cream);
+      margin-bottom: 12px;
+    }
+    .contact-cta-box p {
+      font-size: 0.9rem;
+      color: rgba(250,247,242,0.6);
+      margin-bottom: 32px;
+      line-height: 1.8;
+    }
+    .contact-cta-btns { display: flex; flex-direction: column; gap: 12px; }
+    .btn-full { width: 100%; justify-content: center; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #2a1e1b;
+      padding: 48px 0 28px;
+    }
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      text-align: center;
+    }
+    .footer-logo-script {
+      font-family: var(--ff-script);
+      font-size: 2.4rem;
+      color: var(--gold-lt);
+    }
+    .footer-tagline {
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(250,247,242,0.35);
+    }
+    .footer-links {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .footer-links a {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(250,247,242,0.45);
+      transition: color var(--transition);
+    }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-divider {
+      width: 100%;
+      height: 1px;
+      background: rgba(250,247,242,0.08);
+    }
+    .footer-bottom {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .footer-copy {
+      font-size: 0.75rem;
+      color: rgba(250,247,242,0.25);
+    }
+    .footer-credit {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      color: rgba(200,169,110,0.4);
+      text-transform: uppercase;
+    }
+
+    /* ─── FLOATING BUTTONS ─── */
+    .float-wa {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      z-index: 900;
+      width: 58px; height: 58px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 24px rgba(37,211,102,0.5);
+      transition: transform var(--transition), box-shadow var(--transition);
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+    .float-wa:hover {
+      transform: scale(1.12);
+      box-shadow: 0 12px 32px rgba(37,211,102,0.6);
+      animation: none;
+    }
+    .float-wa svg { width: 28px; height: 28px; color: #fff; }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 6px 24px rgba(37,211,102,0.5), 0 0 0 0 rgba(37,211,102,0.4); }
+      50% { box-shadow: 0 6px 24px rgba(37,211,102,0.5), 0 0 0 12px rgba(37,211,102,0); }
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .about-grid { grid-template-columns: 1fr; gap: 60px; }
+      .about-stat-chips { flex-direction: column; bottom: -80px; left: 50%; transform: translateX(-50%); width: max-content; }
+      .about-image-wrap { margin-bottom: 90px; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .hero-badge { display: none; }
+    }
+    @media (max-width: 600px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .booking-btns { flex-direction: column; align-items: center; }
+      .hero-btns { flex-direction: column; }
+      .btn { width: 100%; justify-content: center; }
+      .footer-links { gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════ NAV ═══════════════════════════ -->
+<nav id="mainNav">
+  <div class="container nav-inner">
+    <a href="#hero" class="nav-logo" aria-label="Geeths Makeover">
+      <span class="nav-logo-script">Geeths</span>
+      <span class="nav-logo-tag">Makeover</span>
+    </a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li>
+        <a href="https://wa.me/919035462874" target="_blank" rel="noopener" class="nav-cta">Book Now</a>
+      </li>
+    </ul>
+
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation">
+  <a href="#about" class="mobile-link">About</a>
+  <a href="#services" class="mobile-link">Services</a>
+  <a href="#contact" class="mobile-link">Contact</a>
+  <a href="https://wa.me/919035462874" target="_blank" rel="noopener" class="mobile-link">Book Now</a>
+</div>
+
+<!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+<section id="hero" aria-label="Hero">
+  <div class="hero-bg"></div>
+  <div class="hero-petal"></div>
+  <div class="hero-petal"></div>
+  <div class="hero-petal"></div>
+
+  <!-- Corner SVG ornaments -->
+  <svg class="corner-ornament tl" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M10 10 Q70 10 70 70" stroke="#c8a96e" stroke-width="1" fill="none"/>
+    <path d="M10 10 Q10 70 70 70" stroke="#c8a96e" stroke-width="1" fill="none"/>
+    <circle cx="10" cy="10" r="3" fill="#c8a96e"/>
+    <circle cx="70" cy="70" r="2" fill="#c8a96e"/>
+    <path d="M30 10 Q30 30 10 30" stroke="#c8a96e" stroke-width="0.6" fill="none"/>
+  </svg>
+
+  <div class="container">
+    <div class="hero-content">
+      <p class="hero-eyebrow reveal">Premium Beauty Artist</p>
+      <h1 class="hero-name reveal reveal-delay-1">Geeths<br/>Makeover</h1>
+      <p class="hero-title reveal reveal-delay-2">Professional Makeup Artist – Beauty at Your Doorstep</p>
+      <p class="hero-desc reveal reveal-delay-3">
+        Elevating your natural beauty with artistry, precision, and premium products. Shashikala brings the salon experience directly to your home — because you deserve to feel extraordinary.
+      </p>
+      <div class="hero-btns reveal reveal-delay-4">
+        <a href="https://wa.me/919035462874" target="_blank" rel="noopener" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.464 3.488"/></svg>
+          Book on WhatsApp
+        </a>
+        <a href="https://instagram.com/geeths_makeover" target="_blank" rel="noopener" class="btn btn-outline">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          Visit Instagram
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Spinning badge -->
+  <div class="hero-badge" aria-hidden="true">
+    <svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <path id="circlePath" d="M70,70 m-52,0 a52,52 0 1,1 104,0 a52,52 0 1,1 -104,0"/>
+      </defs>
+      <circle cx="70" cy="70" r="60" fill="none" stroke="#c8a96e" stroke-width="1" stroke-dasharray="4 6"/>
+      <circle cx="70" cy="70" r="52" fill="rgba(200,169,110,0.06)"/>
+      <text font-family="'Jost', sans-serif" font-size="11" fill="#c8a96e" letter-spacing="3">
+        <textPath href="#circlePath">✦ BEAUTY AT YOUR DOORSTEP ✦ HOME SERVICE ✦</textPath>
+      </text>
+      <text x="70" y="66" text-anchor="middle" font-family="'Great Vibes', cursive" font-size="22" fill="#c8a96e">Geeths</text>
+      <text x="70" y="82" text-anchor="middle" font-family="'Jost', sans-serif" font-size="7.5" fill="#c8a96e" letter-spacing="4">MAKEOVER</text>
+    </svg>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ MARQUEE ═══════════════════════════ -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-track">
+    <!-- duplicated for seamless loop -->
+    <span class="marquee-item">Bridal Makeup</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Wedding Makeup</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Engagement Makeup</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Party Makeup</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Festival Makeup</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Home Service</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Bridal Makeup</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Wedding Makeup</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Engagement Makeup</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Party Makeup</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Festival Makeup</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Home Service</span><span class="marquee-dot">✦</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ ABOUT ═══════════════════════════ -->
+<section id="about" aria-labelledby="about-title">
+  <div class="container">
+    <div class="about-grid">
+      <!-- Image Column -->
+      <div class="about-image-wrap reveal">
+        <div class="about-image-frame">
+          <div class="about-image-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span>Shashikala</span>
+          </div>
+        </div>
+        <div class="about-accent-box" aria-hidden="true"></div>
+        <div class="about-stat-chips">
+          <div class="stat-chip">
+            <span class="stat-chip-num">500+</span>
+            <span class="stat-chip-label">Happy Brides</span>
+          </div>
+          <div class="stat-chip">
+            <span class="stat-chip-num">5★</span>
+            <span class="stat-chip-label">Rated Service</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text Column -->
+      <div class="about-text">
+        <span class="section-label reveal">About Shashikala</span>
+        <h2 class="section-title reveal reveal-delay-1" id="about-title">
+          Where Artistry<br/>Meets <em style="font-style:italic; color:var(--gold)">Elegance</em>
+        </h2>
+        <div class="divider reveal reveal-delay-2"><span class="divider-icon">✦</span></div>
+        <p class="section-subtitle reveal reveal-delay-2">
+          Shashikala is a passionate and highly skilled professional makeup artist with years of experience transforming clients for their most cherished moments. Her philosophy is simple: every face tells a story, and she is here to help you tell yours beautifully.
+        </p>
+        <p class="section-subtitle reveal reveal-delay-3" style="margin-top:16px;">
+          With Geeths Makeover, you never have to step out of your comfort zone. Shashikala travels directly to your home, bringing a curated kit of premium, skin-safe products and delivering a luxurious, personalized experience that rivals the finest salons.
+        </p>
+        <div class="about-values">
+          <div class="about-value reveal reveal-delay-3">
+            <div class="about-value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <div class="about-value-text">
+              <h4>Home Service Specialist</h4>
+              <p>Full salon experience delivered right at your doorstep, on your schedule.</p>
+            </div>
+          </div>
+          <div class="about-value reveal reveal-delay-4">
+            <div class="about-value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="about-value-text">
+              <h4>Premium Products Only</h4>
+              <p>Skin-safe, long-lasting products from trusted international brands.</p>
+            </div>
+          </div>
+          <div class="about-value reveal reveal-delay-5">
+            <div class="about-value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            </div>
+            <div class="about-value-text">
+              <h4>Personalized Care</h4>
+              <p>Each look is curated to complement your unique features and style.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ SERVICES ═══════════════════════════ -->
+<section id="services" aria-labelledby="services-title">
+  <div class="container">
+    <header class="services-header">
+      <span class="section-label reveal">Our Specialities</span>
+      <h2 class="section-title reveal reveal-delay-1" id="services-title">Services We Offer</h2>
+      <div class="divider reveal reveal-delay-2"><span class="divider-icon">✦</span></div>
+      <p class="section-subtitle reveal reveal-delay-2">
+        From your wedding morning to festive celebrations, every look is crafted with care, skill, and a touch of magic — all in the comfort of your home.
+      </p>
+    </header>
+
+    <div class="services-grid">
+      <!-- Card 1 -->
+      <article class="service-card reveal">
+        <span class="service-card-num" aria-hidden="true">01</span>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+        </div>
+        <h3 class="service-name">Bridal Makeup</h3>
+        <p class="service-desc">Flawless, long-wearing bridal looks that photograph beautifully and stay perfect from ceremony to reception — your most important day, perfected.</p>
+        <span class="service-tag">Signature Service</span>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="service-card reveal reveal-delay-1">
+        <span class="service-card-num" aria-hidden="true">02</span>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </div>
+        <h3 class="service-name">Wedding Makeup</h3>
+        <p class="service-desc">Radiant, luminous looks for the entire bridal party. Coordinated wedding makeup that ensures everyone shines in harmony.</p>
+        <span class="service-tag">Group Available</span>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="service-card reveal reveal-delay-2">
+        <span class="service-card-num" aria-hidden="true">03</span>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M8 16s-4 2-4 6h16c0-4-4-6-4-6"/></svg>
+        </div>
+        <h3 class="service-name">Engagement Makeup</h3>
+        <p class="service-desc">Romantic, glowing looks perfect for your engagement ceremony — subtle enough to feel like you, elevated enough to feel unforgettable.</p>
+        <span class="service-tag">Romantic Finish</span>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="service-card reveal reveal-delay-3">
+        <span class="service-card-num" aria-hidden="true">04</span>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <h3 class="service-name">Party Makeup</h3>
+        <p class="service-desc">Glamorous, head-turning looks for cocktail parties, birthdays, anniversaries, and every celebration worth dressing up for.</p>
+        <span class="service-tag">Glam Ready</span>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="service-card reveal reveal-delay-4">
+        <span class="service-card-num" aria-hidden="true">05</span>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9.5 2A6.5 6.5 0 003 8.5c0 1.7.65 3.24 1.72 4.38L12 20l7.28-7.12A6.48 6.48 0 0021 8.5 6.5 6.5 0 009.5 2z"/></svg>
+        </div>
+        <h3 class="service-name">Festival Makeup</h3>
+        <p class="service-desc">Vibrant, culturally inspired looks for Diwali, Navratri, Ugadi, and all your festive occasions — celebrate in full colour.</p>
+        <span class="service-tag">Festive Glow</span>
+      </article>
+
+      <!-- Card 6 -->
+      <article class="service-card reveal reveal-delay-5" style="border: 1.5px solid var(--gold-lt);">
+        <span class="service-card-num" aria-hidden="true">06</span>
+        <div class="service-icon" style="background: linear-gradient(135deg, var(--gold-lt), var(--blush));">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3 class="service-name">Home Service</h3>
+        <p class="service-desc">Your comfort is our priority. Shashikala comes to you — equipped with a full professional kit, ready to transform your space into a private studio.</p>
+        <span class="service-tag" style="border-color:var(--gold); color:var(--gold);">⭐ Premium</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ BOOKING ═══════════════════════════ -->
+<section id="booking" aria-labelledby="booking-title">
+  <div class="booking-bg-ornament" aria-hidden="true"></div>
+  <div class="container">
+    <div class="booking-content">
+      <span class="booking-label reveal">Book Your Session</span>
+      <h2 class="booking-title reveal reveal-delay-1" id="booking-title">
+        Ready to Look<br/><em>Absolutely Stunning?</em>
+      </h2>
+      <p class="booking-sub reveal reveal-delay-2">
+        Reach out via WhatsApp or Instagram to check availability, discuss your vision, and schedule your home service appointment. Shashikala is here to make your special day truly unforgettable.
+      </p>
+      <div class="booking-btns reveal reveal-delay-3">
+        <a href="https://wa.me/919035462874" target="_blank" rel="noopener" class="btn btn-wa">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.464 3.488"/></svg>
+          Book via WhatsApp
+        </a>
+        <a href="https://instagram.com/geeths_makeover" target="_blank" rel="noopener" class="btn btn-ig">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          DM on Instagram
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ CONTACT ═══════════════════════════ -->
+<section id="contact" aria-labelledby="contact-title">
+  <div class="container">
+    <div style="margin-bottom:60px; text-align:center;">
+      <span class="section-label reveal">Get in Touch</span>
+      <h2 class="section-title reveal reveal-delay-1" id="contact-title">Contact Us</h2>
+      <div class="divider reveal reveal-delay-2"><span class="divider-icon">✦</span></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-item reveal">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.79 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+          </div>
+          <div class="contact-item-text">
+            <h4>Phone &amp; WhatsApp</h4>
+            <a href="tel:+919035462874">+91 90354 62874</a>
+          </div>
+        </div>
+
+        <div class="contact-item reveal reveal-delay-1">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </div>
+          <div class="contact-item-text">
+            <h4>Instagram</h4>
+            <a href="https://instagram.com/geeths_makeover" target="_blank" rel="noopener">@geeths_makeover</a>
+          </div>
+        </div>
+
+        <div class="contact-item reveal reveal-delay-2">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div class="contact-item-text">
+            <h4>Service Type</h4>
+            <p>Home Service — We come to you!</p>
+          </div>
+        </div>
+
+        <div class="contact-item reveal reveal-delay-3">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="contact-item-text">
+            <h4>Availability</h4>
+            <p>7 days a week — Early mornings to evenings</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Box -->
+      <div class="contact-cta-box reveal reveal-delay-2">
+        <p style="font-family:var(--ff-script);font-size:2rem;color:var(--gold-lt);margin-bottom:8px;">Let's Create</p>
+        <h3>Your Perfect Look</h3>
+        <p>Whether it's your wedding day, engagement, or a special party — Shashikala will craft a look that makes you feel truly extraordinary.</p>
+        <div class="contact-cta-btns">
+          <a href="https://wa.me/919035462874" target="_blank" rel="noopener" class="btn btn-wa btn-full">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.464 3.488"/></svg>
+            Book via WhatsApp
+          </a>
+          <a href="https://instagram.com/geeths_makeover" target="_blank" rel="noopener" class="btn btn-ig btn-full">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            DM on Instagram
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo-script">Geeths Makeover</div>
+      <p class="footer-tagline">Professional Makeup Artist · Beauty at Your Doorstep</p>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#booking">Book Now</a>
+        <a href="#contact">Contact</a>
+        <a href="https://wa.me/919035462874" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://instagram.com/geeths_makeover" target="_blank" rel="noopener">Instagram</a>
+      </nav>
+      <div class="footer-divider"></div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2025 Geeths Makeover. All rights reserved.</p>
+        <p class="footer-credit">Website Designed by Falcon Sector 1</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════ FLOATING WA ═══════════════════════════ -->
+<a href="https://wa.me/919035462874" target="_blank" rel="noopener" class="float-wa" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.464 3.488"/></svg>
+</a>
+
+<!-- ═══════════════════════════ JS ═══════════════════════════ -->
+<script>
+  // Sticky nav
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 50);
+  }, { passive: true });
+
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    const open = hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
